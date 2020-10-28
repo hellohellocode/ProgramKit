@@ -3,7 +3,6 @@
 #BoBoBo#
 
 close_check_print = False
-stop_input_cycle = False
 
 def check_print(info):
     global close_check_print
@@ -13,10 +12,10 @@ def check_print(info):
 def deal_input_line_cycle(func):
     global stop_input_cycle
     while True:
-        if stop_input_cycle:
-            break
         try:
             it = input()
+            if 'stopit' == it:
+                break
             func(it)
         except BaseException as e:
             print(e)
